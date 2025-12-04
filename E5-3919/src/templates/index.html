@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>申请许可证</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+        }
+
+        .nav {
+            margin-bottom: 20px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            width: 85%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        .result-box {
+            margin-top: 20px;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #c8e6c9;
+        }
+
+        .key-text {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            display: block;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="nav">
+        <span>当前页面：申请许可证</span> | <a href="/watch">前往监控后台 &rarr;</a>
+    </div>
+
+    <div class="card">
+        <h2>📄 获取软件许可证</h2>
+        <p style="color: #666; font-size: 0.9em;">请输入用户信息以生成唯一序列号</p>
+
+        <form action="/generate" method="post">
+            <input type="text" name="username" placeholder="用户名" required>
+            <input type="password" name="password" placeholder="口令 (任意)">
+            <input type="submit" value="立即生成">
+        </form>
+
+        {% if new_license %}
+        <div class="result-box">
+            <small>生成成功！您的序列号是：</small>
+            <span class="key-text">{{ new_license }}</span>
+            <small style="color: #666; display: block; margin-top: 5px;">请复制并在客户端软件中使用</small>
+        </div>
+        {% endif %}
+    </div>
+
+</body>
+
+</html>

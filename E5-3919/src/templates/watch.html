@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>服务器监控后台</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #e9ecef;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto 20px auto;
+        }
+
+        .btn-link {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            color: #495057;
+            text-align: left;
+            padding: 12px;
+            border-bottom: 2px solid #dee2e6;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #dee2e6;
+            color: #212529;
+        }
+
+        /* 状态样式 */
+        .badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .bg-success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .bg-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .bg-secondary {
+            background-color: #e2e3e5;
+            color: #383d41;
+        }
+
+        .refresh-btn {
+            padding: 8px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .refresh-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .ip-list {
+            font-family: monospace;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <div>
+            <a href="/" class="btn-link">&larr; 返回申请页</a>
+        </div>
+        <h2>🖥️ 许可证并发监控 (Max=10)</h2>
+    </div>
+
+    <div class="container">
+        <div style="text-align: right; margin-bottom: 15px;">
+            <button class="refresh-btn" onclick="location.reload()">🔄 刷新数据</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>序列号 (SN)</th>
+                    <th>在线人数</th>
+                    <th>状态</th>
+                    <th>当前接入客户端 (IP:Port)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if data %}
+                {% for key, info in data.items() %}
+                <tr>
+                    <td style="font-weight: bold;">{{ key }}</td>
+                    <td>
+                        <span style="font-size: 1.1em;">{{ info.count }}</span>
+                        <span style="color: #999;">/ {{ info.max }}</span>
+                    </td>
+                    <td>
+                        {% if info.count >= info.max %}
+                        <span class="badge bg-danger">已满员</span>
+                        {% elif info.count > 0 %}
+                        <span class="badge bg-success">使用中</span>
+                        {% else %}
+                        <span class="badge bg-secondary">空闲</span>
+                        {% endif %}
+                    </td>
+                    <td class="ip-list">
+                        {{ info.users_str }}
+                    </td>
+                </tr>
+                {% endfor %}
+                {% else %}
+                <tr>
+                    <td colspan="4" style="text-align: center; padding: 30px; color: #999;">
+                        暂无许可证数据，请前往申请页生成。
+                    </td>
+                </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>
