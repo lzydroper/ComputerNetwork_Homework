@@ -1,0 +1,15 @@
+E:\系统\文档\GitHub\ComputerNetwork\E7-3919\src\FreakingProxy\bin\Debug\net9.0\FreakingProxy.exe
+E:\系统\文档\GitHub\ComputerNetwork\E7-3919\src\FreakingProxy\bin\Debug\net9.0\FreakingProxy.deps.json
+E:\系统\文档\GitHub\ComputerNetwork\E7-3919\src\FreakingProxy\bin\Debug\net9.0\FreakingProxy.runtimeconfig.json
+E:\系统\文档\GitHub\ComputerNetwork\E7-3919\src\FreakingProxy\bin\Debug\net9.0\FreakingProxy.dll
+E:\系统\文档\GitHub\ComputerNetwork\E7-3919\src\FreakingProxy\bin\Debug\net9.0\FreakingProxy.pdb
+E:\系统\文档\GitHub\ComputerNetwork\E7-3919\src\FreakingProxy\obj\Debug\net9.0\FreakingProxy.GeneratedMSBuildEditorConfig.editorconfig
+E:\系统\文档\GitHub\ComputerNetwork\E7-3919\src\FreakingProxy\obj\Debug\net9.0\FreakingProxy.AssemblyInfoInputs.cache
+E:\系统\文档\GitHub\ComputerNetwork\E7-3919\src\FreakingProxy\obj\Debug\net9.0\FreakingProxy.AssemblyInfo.cs
+E:\系统\文档\GitHub\ComputerNetwork\E7-3919\src\FreakingProxy\obj\Debug\net9.0\FreakingProxy.csproj.CoreCompileInputs.cache
+E:\系统\文档\GitHub\ComputerNetwork\E7-3919\src\FreakingProxy\obj\Debug\net9.0\FreakingProxy.sourcelink.json
+E:\系统\文档\GitHub\ComputerNetwork\E7-3919\src\FreakingProxy\obj\Debug\net9.0\FreakingProxy.dll
+E:\系统\文档\GitHub\ComputerNetwork\E7-3919\src\FreakingProxy\obj\Debug\net9.0\refint\FreakingProxy.dll
+E:\系统\文档\GitHub\ComputerNetwork\E7-3919\src\FreakingProxy\obj\Debug\net9.0\FreakingProxy.pdb
+E:\系统\文档\GitHub\ComputerNetwork\E7-3919\src\FreakingProxy\obj\Debug\net9.0\FreakingProxy.genruntimeconfig.cache
+E:\系统\文档\GitHub\ComputerNetwork\E7-3919\src\FreakingProxy\obj\Debug\net9.0\ref\FreakingProxy.dll
